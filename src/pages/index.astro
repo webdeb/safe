@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Encrypt from '../components/Encrypt';
+import Decrypt from '../components/Decrypt';
+---
+
+<Layout title="Safe - Secure File Encryption">
+	<div class="max-w-4xl mx-auto p-4">
+		<div class="text-center mb-8">
+			<h1 class="text-4xl font-bold text-gray-900 mb-4">Safe</h1>
+			<p class="text-lg text-gray-600">Secure file encryption using RSA-OAEP and AES-GCM</p>
+		</div>
+
+		<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+			<div class="border-b border-gray-200">
+				<nav class="flex -mb-px" aria-label="Tabs">
+					<button
+						class="tab-button w-1/2 py-4 px-1 text-center border-b-2 font-medium text-sm"
+						data-tab="encrypt"
+					>
+						Encrypt
+					</button>
+					<button
+						class="tab-button w-1/2 py-4 px-1 text-center border-b-2 font-medium text-sm"
+						data-tab="decrypt"
+					>
+						Decrypt
+					</button>
+				</nav>
+			</div>
+			<div class="p-6">
+				<div id="encrypt-tab" class="tab-content">
+					<Encrypt client:load />
+				</div>
+				<div id="decrypt-tab" class="tab-content hidden">
+					<Decrypt client:load />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		document.querySelectorAll('.tab-button').forEach(button => {
+			button.addEventListener('click', () => {
+				// Remove active state from all buttons
+				document.querySelectorAll('.tab-button').forEach(btn => {
+					btn.classList.remove('border-indigo-500', 'text-indigo-600');
+					btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+				});
+
+				// Add active state to clicked button
+				button.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+				button.classList.add('border-indigo-500', 'text-indigo-600');
+
+				// Hide all tab contents
+				document.querySelectorAll('.tab-content').forEach(content => {
+					content.classList.add('hidden');
+				});
+
+				// Show selected tab content
+				const tabId = button.getAttribute('data-tab');
+				document.getElementById(`${tabId}-tab`).classList.remove('hidden');
+			});
+		});
+	</script>
+</Layout> 

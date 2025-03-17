@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About - Safe">
+	<div class="max-w-3xl mx-auto">
+		<div class="bg-white shadow sm:rounded-lg">
+			<div class="px-4 py-5 sm:p-6">
+				<h3 class="text-lg font-medium leading-6 text-gray-900">About Safe</h3>
+				<div class="mt-2 max-w-xl text-sm text-gray-500">
+					<p>Safe is a secure file encryption tool that uses state-of-the-art encryption algorithms to protect your data.</p>
+				</div>
+
+				<div class="mt-8 space-y-6">
+					<div>
+						<h4 class="text-base font-medium text-gray-900">How It Works</h4>
+						<div class="mt-4 prose prose-indigo">
+							<p>Safe uses a hybrid encryption approach combining RSA-OAEP and AES-GCM:</p>
+							<ul>
+								<li>RSA-OAEP (2048-bit) for asymmetric encryption of the AES key</li>
+								<li>AES-GCM (256-bit) for symmetric encryption of the actual data</li>
+								<li>All encryption happens client-side in your browser</li>
+								<li>No data is ever sent to our servers</li>
+							</ul>
+						</div>
+					</div>
+
+					<div>
+						<h4 class="text-base font-medium text-gray-900">Security Features</h4>
+						<div class="mt-4 prose prose-indigo">
+							<ul>
+								<li>Client-side encryption: Your files never leave your browser</li>
+								<li>Strong encryption algorithms: RSA-OAEP and AES-GCM</li>
+								<li>Secure key generation using Web Crypto API</li>
+								<li>No server storage or processing</li>
+								<li>Automatic cleanup of temporary data</li>
+							</ul>
+						</div>
+					</div>
+
+					<div>
+						<h4 class="text-base font-medium text-gray-900">Technical Details</h4>
+						<div class="mt-4 prose prose-indigo">
+							<p>The encryption process:</p>
+							<ol>
+								<li>Generate a random AES key for data encryption</li>
+								<li>Encrypt the AES key using the recipient's RSA public key</li>
+								<li>Generate a random IV (Initialization Vector)</li>
+								<li>Encrypt the data using AES-GCM with the generated key and IV</li>
+								<li>Combine the encrypted AES key, IV, and encrypted data</li>
+							</ol>
+						</div>
+					</div>
+
+					<div>
+						<h4 class="text-base font-medium text-gray-900">Browser Compatibility</h4>
+						<div class="mt-4 prose prose-indigo">
+							<p>Safe requires a modern browser that supports the Web Crypto API:</p>
+							<ul>
+								<li>Chrome 60+</li>
+								<li>Firefox 55+</li>
+								<li>Safari 11+</li>
+								<li>Edge 79+</li>
+							</ul>
+						</div>
+					</div>
+
+					<div>
+						<h4 class="text-base font-medium text-gray-900">Limitations</h4>
+						<div class="mt-4 prose prose-indigo">
+							<ul>
+								<li>Maximum file size: Limited by browser memory (recommended < 500MB)</li>
+								<li>Number of files: Limited by browser memory</li>
+								<li>Browser must support Web Crypto API</li>
+							</ul>
+						</div>
+					</div>
+
+					<div>
+						<h4 class="text-base font-medium text-gray-900">Best Practices</h4>
+						<div class="mt-4 prose prose-indigo">
+							<ul>
+								<li>Keep your private key secure and never share it</li>
+								<li>Back up your private key safely</li>
+								<li>Use strong passwords when protecting your private key</li>
+								<li>Regularly update your browser for security patches</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout> 
