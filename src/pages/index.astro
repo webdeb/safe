@@ -11,7 +11,7 @@ import Decrypt from '../components/Decrypt';
 			<p class="text-lg text-gray-600">Secure file encryption using RSA-OAEP and AES-GCM</p>
 		</div>
 
-		<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+		<div class="bg-white shadow-lg rounded-lg overflow-hidden mb-12">
 			<div class="border-b border-gray-200">
 				<nav class="flex -mb-px" aria-label="Tabs">
 					<button
@@ -35,6 +35,39 @@ import Decrypt from '../components/Decrypt';
 				<div id="decrypt-tab" class="tab-content hidden">
 					<Decrypt client:load />
 				</div>
+			</div>
+		</div>
+
+		<div class="bg-white shadow-lg rounded-lg p-8">
+			<h2 class="text-2xl font-bold text-gray-900 mb-6">About Safe</h2>
+			<div class="prose prose-indigo max-w-none">
+				<p>
+					Safe is a secure file encryption tool that allows you to encrypt and decrypt files using state-of-the-art encryption algorithms. Our service is designed with security and privacy in mind, ensuring that your data remains protected and accessible only to intended recipients.
+				</p>
+
+				<h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Key Features</h3>
+				<ul class="list-disc pl-6 space-y-2">
+					<li><strong>Client-Side Encryption:</strong> All encryption and decryption happens directly in your browser. Your files never leave your device unencrypted.</li>
+					<li><strong>Strong Encryption:</strong> We use RSA-OAEP for key exchange and AES-GCM for file encryption, providing military-grade security.</li>
+					<li><strong>Easy to Use:</strong> Simple interface for encrypting and decrypting files with just a few clicks.</li>
+					<li><strong>No Registration Required:</strong> Start using Safe immediately without creating an account.</li>
+					<li><strong>Multiple File Support:</strong> Encrypt and decrypt multiple files at once.</li>
+				</ul>
+
+				<h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">How It Works</h3>
+				<ol class="list-decimal pl-6 space-y-2">
+					<li><strong>Key Generation:</strong> Generate a secure key pair (public and private keys) for encryption and decryption.</li>
+					<li><strong>Encryption:</strong> Select files to encrypt and provide the recipient's public key. The files are encrypted using AES-GCM, and the key is encrypted using RSA-OAEP.</li>
+					<li><strong>Decryption:</strong> Import your private key and select the encrypted file. The system decrypts the AES key using your private key and then decrypts the files.</li>
+				</ol>
+
+				<h3 class="text-xl font-semibold text-gray-900 mt-6 mb-3">Security Features</h3>
+				<ul class="list-disc pl-6 space-y-2">
+					<li><strong>End-to-End Encryption:</strong> Your files are encrypted before they leave your device and can only be decrypted by the intended recipient.</li>
+					<li><strong>No Server Storage:</strong> We don't store any of your files or keys on our servers.</li>
+					<li><strong>Secure Key Management:</strong> Private keys are never transmitted and are stored securely on your device.</li>
+					<li><strong>Modern Cryptography:</strong> Uses industry-standard encryption algorithms and best practices.</li>
+				</ul>
 			</div>
 		</div>
 	</div>
